@@ -30,9 +30,16 @@ jobs:
       - name: Build project
         run: pnpm build
 
+      # ФІКС 1: Жорстко створюємо .nojekyll, щоб GitHub не ігнорував папку _next
+      - name: Create .nojekyll file
+        run: touch ./out/.nojekyll
+
+      # ФІКС 2: Явно створюємо CNAME прямо в папці зі збіркою
+      - name: Create CNAME file
+        run: echo "smotrytska-perlyna.itkamianets.com" > ./out/CNAME
+
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out  
-          cname: smotrytska-perlyna.itkamianets.com 
+          publish_dir: ./out
