@@ -39,9 +39,9 @@ export const metadata: Metadata = {
       'Затишний еко-готель у серці Кам\'янця-Подільського. 17 номерів, домашня кухня, 2 хвилини до Старої фортеці та Смотрицького каньйону.',
     images: [
       {
-        url: 'https://smotrytska-perlyna.itkamianets.com/logo/hero.png',
-        width: 1200,
-        height: 630,
+        url: 'https://smotrytska-perlyna.itkamianets.com/logo/logo.png', // ЗМІНЕНО: на logo.png
+        width: 512, // ЗМІНЕНО: квадратний розмір
+        height: 512, // ЗМІНЕНО: квадратний розмір
         alt: 'Еко-готель Смотрицька Перлина',
       },
     ],
@@ -49,11 +49,11 @@ export const metadata: Metadata = {
     locale: 'uk_UA',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary', // ЗМІНЕНО: з summary_large_image на summary (це дає маленьке фото справа)
     title: 'Смотрицька Перлина - Еко-готель у Кам\'янці-Подільському',
     description:
       'Еко-готель на 17 номерів за 2 хвилини від Старої фортеці. Домашня кухня та відпочинок у Кам\'янці-Подільському.',
-    images: ['https://smotrytska-perlyna.itkamianets.com/logo/hero.png'],
+    images: ['https://smotrytska-perlyna.itkamianets.com/logo/logo.png'], // ЗМІНЕНО: на logo.png
   },
   icons: {
     icon: '/logo/fvicon.ico',
