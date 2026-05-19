@@ -9,7 +9,7 @@ const BOOKING_URL =
 export default function Footer() {
   const { t } = useI18n();
   const address = `${t.location.addressStreet} ${t.location.addressFormer}, ${t.location.addressCity}`;
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  const mapUrl = "https://maps.app.goo.gl/KfDGTLeFvj5HZEbw9";
 
   return (
     <footer id="footer" className="bg-primary py-16">
