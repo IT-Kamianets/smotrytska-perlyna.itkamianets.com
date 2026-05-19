@@ -112,7 +112,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="h-7 w-7 text-accent" />
+                <MapPin className="h-10 w-10 text-accent" />
                 <a
                   href={mapUrl}
                   target="_blank"
