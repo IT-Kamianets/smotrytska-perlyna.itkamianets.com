@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, Instagram, Facebook, Github } from "lucide-react";
+import { Phone, MapPin, Instagram, Facebook, Github } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 const BOOKING_URL =
@@ -8,6 +8,8 @@ const BOOKING_URL =
 
 export default function Footer() {
   const { t } = useI18n();
+  const address = `${t.location.addressStreet} ${t.location.addressFormer}, ${t.location.addressCity}`;
+  const mapUrl = "https://maps.app.goo.gl/KfDGTLeFvj5HZEbw9";
 
   return (
     <footer id="footer" className="bg-primary py-16">
@@ -107,6 +109,17 @@ export default function Footer() {
                   className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
                 >
                   {"(098) 411 51 94"}
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="h-10 w-10 text-accent" />
+                <a
+                  href={mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+                >
+                  {address}
                 </a>
               </li>
             </ul>
