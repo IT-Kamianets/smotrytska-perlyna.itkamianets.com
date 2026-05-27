@@ -7,7 +7,20 @@
       "Bash(npx serve *)",
       "Bash(curl -s -X POST \"https://smotrytska-perlyna.itkamianets.com/api/telegram/contact\" -H \"Content-Type: application/json\" -d '{\"slug\":\"smotrytska-perlyna\",\"message\":\"Test message from curl\"}')",
       "Bash(curl -s -X POST \"https://smotrytska-perlyna.itkamianets.com/api/telegram/contact\" -H \"Content-Type: application/json\" -H \"Origin: https://smotrytska-perlyna.itkamianets.com\" -H \"Referer: https://smotrytska-perlyna.itkamianets.com/\" -d '{\"slug\":\"smotrytska-perlyna\",\"message\":\"Test message from curl\"}' -v)",
-      "Bash(curl -s \"https://smotrytska-perlyna.itkamianets.com/\" -I)"
+      "Bash(curl -s \"https://smotrytska-perlyna.itkamianets.com/\" -I)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001/)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \":3001\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\(d.get\\('scripts',{}\\), indent=2\\)\\)\")",
+      "Bash(Get-Process -Id 936)",
+      "Bash(Select-Object ProcessName, Id, MainWindowTitle)",
+      "Bash(ps -p 936 -o comm=)",
+      "Bash(tasklist /FI \"PID eq 936\")",
+      "Bash(curl -s http://localhost:3001/)",
+      "Bash(npx next *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(echo \"PID=$!\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/)"
     ]
   }
 }

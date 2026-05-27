@@ -17,9 +17,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
-
-const BOOKING_URL =
-  "https://www.booking.com/hotel/ua/sadiba-smotrits-ka-pierlina.ru.html?aid=1188619&label=69a4558f422857ff297cea7e&sid=37ece3605c39643a8072ebb3e1ee877f&all_sr_blocks=301780201_241908542_2_2_0&checkin=2026-03-05&checkout=2026-03-06&dest_id=-1040849&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=301780201_241908542_2_2_0&hpos=1&matching_block_id=301780201_241908542_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=301780201_241908542_2_2_0__130000&srepoch=1772377499&srpvid=4cfa6a093f0304d2&type=total&ucfs=1&#availability";
+import BookingModal from "@/components/booking-modal";
 
 type AmenityKey = "aircon" | "tv" | "wifi" | "privateBathroom" | "sharedBathroom" | "fridge" | "kettle" | "balconyView" | "balcony" | "sofa" | "desk";
 
@@ -106,8 +104,15 @@ function RoomCarousel({ images, title, photoAlt }: { images: string[]; title: st
 
 export default function Rooms() {
   const { t } = useI18n();
+  const [bookingRoom, setBookingRoom] = useState<string | null>(null);
 
   return (
+    <>
+    <BookingModal
+      open={bookingRoom !== null}
+      onClose={() => setBookingRoom(null)}
+      roomTitle={bookingRoom ?? undefined}
+    />
     <section id="rooms" className="bg-secondary py-20">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="mb-12 text-center">
@@ -165,14 +170,12 @@ export default function Rooms() {
                   })}
                 </div>
 
-                <a
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setBookingRoom(room.title)}
                   className="mt-6 inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 active:scale-95"
                 >
                   {t.rooms.book}
-                </a>
+                </button>
               </div>
             </div>
           ))}
@@ -183,5 +186,6 @@ export default function Rooms() {
         </p>
       </div>
     </section>
+    </>
   );
 }

@@ -10,9 +10,10 @@ const API_URL = "https://smotrytska-perlyna.itkamianets.com/api/telegram/contact
 interface Props {
   open: boolean;
   onClose: () => void;
+  roomTitle?: string;
 }
 
-export default function BookingModal({ open, onClose }: Props) {
+export default function BookingModal({ open, onClose, roomTitle }: Props) {
   const { t } = useI18n();
   const m = t.bookingModal;
 
@@ -29,6 +30,7 @@ export default function BookingModal({ open, onClose }: Props) {
 
     const message = [
       "🏨 Запит на бронювання",
+      roomTitle ? `Номер: ${roomTitle}` : null,
       `Ім'я: ${name}`,
       `Телефон: ${phone}`,
       note ? `Повідомлення: ${note}` : null,
