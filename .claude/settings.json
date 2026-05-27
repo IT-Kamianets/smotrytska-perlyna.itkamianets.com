@@ -3,7 +3,11 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(npm start *)",
-      "Bash(npx serve@latest out)"
+      "Bash(npx serve@latest out)",
+      "Bash(npx serve *)",
+      "Bash(curl -s -X POST \"https://smotrytska-perlyna.itkamianets.com/api/telegram/contact\" -H \"Content-Type: application/json\" -d '{\"slug\":\"smotrytska-perlyna\",\"message\":\"Test message from curl\"}')",
+      "Bash(curl -s -X POST \"https://smotrytska-perlyna.itkamianets.com/api/telegram/contact\" -H \"Content-Type: application/json\" -H \"Origin: https://smotrytska-perlyna.itkamianets.com\" -H \"Referer: https://smotrytska-perlyna.itkamianets.com/\" -d '{\"slug\":\"smotrytska-perlyna\",\"message\":\"Test message from curl\"}' -v)",
+      "Bash(curl -s \"https://smotrytska-perlyna.itkamianets.com/\" -I)"
     ]
   }
 }

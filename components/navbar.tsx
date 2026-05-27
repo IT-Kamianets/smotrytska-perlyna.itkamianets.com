@@ -3,9 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, Globe, Sparkles, BedDouble, UtensilsCrossed, Image, Star, MapPin, Phone } from "lucide-react";
 import { useI18n, type Locale } from "@/lib/i18n";
-
-const BOOKING_URL =
-  "https://www.booking.com/hotel/ua/sadiba-smotrits-ka-pierlina.ru.html?aid=1188619&label=69a4558f422857ff297cea7e&sid=37ece3605c39643a8072ebb3e1ee877f&all_sr_blocks=301780201_241908542_2_2_0&checkin=2026-03-05&checkout=2026-03-06&dest_id=-1040849&dest_type=city&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=301780201_241908542_2_2_0&hpos=1&matching_block_id=301780201_241908542_2_2_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=301780201_241908542_2_2_0__130000&srepoch=1772377499&srpvid=4cfa6a093f0304d2&type=total&ucfs=1&#availability";
+import BookingModal from "@/components/booking-modal";
 
 const locales: Locale[] = ["UK", "EN", "DE", "FR", "PL"];
 
@@ -15,6 +13,7 @@ export default function Navbar() {
   const { locale, setLocale, t } = useI18n();
   const [langOpen, setLangOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [bookingOpen, setBookingOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
   const navLinks = [
@@ -66,6 +65,7 @@ export default function Navbar() {
 
   return (
     <>
+    <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     <nav className="fixed top-0 right-0 left-0 z-50 border-b border-border bg-card/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-2 md:px-5 md:py-4 lg:px-8">
         <a href="#hero" className="flex items-center gap-1.5 md:gap-2 text-foreground">
@@ -130,14 +130,12 @@ export default function Navbar() {
             )}
           </div>
 
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setBookingOpen(true)}
             className="rounded-md sm:rounded-lg bg-primary px-2 py-1.5 sm:px-3 sm:py-2 md:px-5 md:py-2.5 text-[10px] sm:text-[11px] md:text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 active:scale-95"
           >
             {t.nav.book}
-          </a>
+          </button>
         </div>
       </div>
 

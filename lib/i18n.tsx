@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { createContext, useContext, useState, type ReactNode } from "react";
 
@@ -124,6 +124,22 @@ interface Translations {
     brandDesc: string;
     navHeading: string;
     copyright: string;
+  };
+  bookingModal: {
+    title: string;
+    subtitle: string;
+    nameLabel: string;
+    namePlaceholder: string;
+    phoneLabel: string;
+    phonePlaceholder: string;
+    noteLabel: string;
+    notePlaceholder: string;
+    submit: string;
+    sending: string;
+    successTitle: string;
+    successText: string;
+    errorText: string;
+    close: string;
   };
 }
 
@@ -265,6 +281,22 @@ const translations: Record<Locale, Translations> = {
       navHeading: "Навігація",
       copyright: "\u00A9 2026 Смотрицька Перлина. Усі права захищені.",
     },
+    bookingModal: {
+      title: "Забронювати номер",
+      subtitle: "Залиште свої контакти — ми зв’яжемося з вами найближчим часом.",
+      nameLabel: "Ваше ім’я",
+      namePlaceholder: "Іван Петренко",
+      phoneLabel: "Номер телефону",
+      phonePlaceholder: "+380 XX XXX XX XX",
+      noteLabel: "Коментар (необов’язково)",
+      notePlaceholder: "Бажані дати, кількість гостей тощо",
+      submit: "Надіслати запит",
+      sending: "Надсилається...",
+      successTitle: "Запит надіслано!",
+      successText: "Ми отримали ваш запит і зв’яжемося з вами найближчим часом.",
+      errorText: "Щось пішло не так. Спробуйте ще раз або зателефонуйте нам.",
+      close: "Закрити",
+    },
   },
   EN: {
     nav: {
@@ -402,6 +434,22 @@ const translations: Record<Locale, Translations> = {
       brandDesc: "Eco-hotel in the heart of historic Kamianets-Podilskyi. Your perfect balance between history and nature.",
       navHeading: "Navigation",
       copyright: "\u00A9 2026 Smotrytska Perlyna. All rights reserved.",
+    },
+    bookingModal: {
+      title: "Book a room",
+      subtitle: "Leave your contact details — we will get back to you shortly.",
+      nameLabel: "Your name",
+      namePlaceholder: "John Smith",
+      phoneLabel: "Phone number",
+      phonePlaceholder: "+380 XX XXX XX XX",
+      noteLabel: "Comment (optional)",
+      notePlaceholder: "Preferred dates, number of guests, etc.",
+      submit: "Send request",
+      sending: "Sending...",
+      successTitle: "Request sent!",
+      successText: "We have received your request and will contact you shortly.",
+      errorText: "Something went wrong. Please try again or call us.",
+      close: "Close",
     },
   },
   DE: {
@@ -541,6 +589,22 @@ const translations: Record<Locale, Translations> = {
       navHeading: "Navigation",
       copyright: "\u00A9 2026 Smotrytska Perlyna. Alle Rechte vorbehalten.",
     },
+    bookingModal: {
+      title: "Zimmer buchen",
+      subtitle: "Hinterlassen Sie Ihre Kontaktdaten — wir melden uns in Kürze bei Ihnen.",
+      nameLabel: "Ihr Name",
+      namePlaceholder: "Hans Müller",
+      phoneLabel: "Telefonnummer",
+      phonePlaceholder: "+380 XX XXX XX XX",
+      noteLabel: "Kommentar (optional)",
+      notePlaceholder: "Gewünschte Daten, Anzahl der Gäste usw.",
+      submit: "Anfrage senden",
+      sending: "Wird gesendet...",
+      successTitle: "Anfrage gesendet!",
+      successText: "Wir haben Ihre Anfrage erhalten und werden uns in Kürze bei Ihnen melden.",
+      errorText: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder rufen Sie uns an.",
+      close: "Schließen",
+    },
   },
   FR: {
     nav: {
@@ -679,6 +743,22 @@ const translations: Record<Locale, Translations> = {
       navHeading: "Navigation",
       copyright: "\u00A9 2026 Smotrytska Perlyna. Tous droits reserves.",
     },
+    bookingModal: {
+      title: "Réserver une chambre",
+      subtitle: "Laissez vos coordonnées — nous vous contacterons très bientôt.",
+      nameLabel: "Votre nom",
+      namePlaceholder: "Jean Dupont",
+      phoneLabel: "Numéro de téléphone",
+      phonePlaceholder: "+380 XX XXX XX XX",
+      noteLabel: "Commentaire (facultatif)",
+      notePlaceholder: "Dates souhaitées, nombre de voyageurs, etc.",
+      submit: "Envoyer la demande",
+      sending: "Envoi en cours...",
+      successTitle: "Demande envoyée !",
+      successText: "Nous avons reçu votre demande et vous contacterons très bientôt.",
+      errorText: "Quelque chose a mal tourné. Réessayez ou appelez-nous.",
+      close: "Fermer",
+    },
   },
   PL: {
     nav: {
@@ -816,6 +896,22 @@ const translations: Record<Locale, Translations> = {
       brandDesc: "Eko-hotel w sercu historycznego Kamieniec Podolskiego. Twoja idealna rownowaga miedzy historia a natura.",
       navHeading: "Nawigacja",
       copyright: "\u00A9 2026 Smotrytska Perlyna. Wszelkie prawa zastrzezone.",
+    },
+    bookingModal: {
+      title: "Zarezerwuj pokój",
+      subtitle: "Zostaw swoje dane kontaktowe — skontaktujemy się z Tobą wkrótce.",
+      nameLabel: "Twoje imię",
+      namePlaceholder: "Jan Kowalski",
+      phoneLabel: "Numer telefonu",
+      phonePlaceholder: "+380 XX XXX XX XX",
+      noteLabel: "Komentarz (opcjonalnie)",
+      notePlaceholder: "Pożądane daty, liczba gości itp.",
+      submit: "Wyślij zapytanie",
+      sending: "Wysyłanie...",
+      successTitle: "Zapytanie wysłane!",
+      successText: "Otrzymaliśmy Twoje zapytanie i skontaktujemy się z Tobą wkrótce.",
+      errorText: "Coś poszło nie tak. Spróbuj ponownie lub zadzwoń do nas.",
+      close: "Zamknij",
     },
   },
 };
