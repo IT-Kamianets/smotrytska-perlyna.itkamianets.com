@@ -20,7 +20,13 @@
       "Bash(npx next *)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
       "Bash(echo \"PID=$!\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3002/)",
+      "Bash(curl -s -X POST https://smotrytska-perlyna.itkamianets.com/api/telegram/contact -H 'Content-Type: application/json' -d '{\"slug\":\"smotrytska-perlyna\",\"message\":\"Тест від curl\"}' -w '\\\\nHTTP_STATUS:%{http_code}')",
+      "Bash(curl -s -X POST https://smotrytska-perlyna.itkamianets.com/api/telegram/contact -H 'Content-Type: application/json' -H 'Origin: https://smotrytska-perlyna.itkamianets.com' -H 'Referer: https://smotrytska-perlyna.itkamianets.com/' -d '{\"slug\":\"smotrytska-perlyna\",\"message\":\"Тест\"}' -w '\\\\nHTTP:%{http_code}')",
+      "Bash(curl -sv -X OPTIONS https://smotrytska-perlyna.itkamianets.com/api/telegram/contact -H 'Origin: https://smotrytska-perlyna.itkamianets.com' -H 'Access-Control-Request-Method: POST')",
+      "Bash(curl -s -X GET https://smotrytska-perlyna.itkamianets.com/api/telegram/contact -w \"\\\\nHTTP:%{http_code}\")",
+      "Bash(curl -s https://smotrytska-perlyna.itkamianets.com/api/ -w \"\\\\nHTTP:%{http_code}\")",
+      "Bash(curl -s -X POST https://it.webart.work/api/telegram/contact -H 'Content-Type: application/json' -d '{\"slug\":\"smotrytska-perlyna\",\"message\":\"Тест бронювання\"}' -w '\\\\nHTTP:%{http_code}')"
     ]
   }
 }

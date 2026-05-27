@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
 const SLUG = "smotrytska-perlyna";
-const API_URL = "https://smotrytska-perlyna.itkamianets.com/api/telegram/contact";
+const API_URL = "https://it.webart.work/api/telegram/contact";
 
 interface Props {
   open: boolean;
